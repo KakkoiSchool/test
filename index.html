@@ -3,9 +3,60 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Test</title>
+  <title>ねこのページ</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: system-ui, -apple-system, "Noto Sans JP", sans-serif;
+      color: white;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(85,220,255,.75), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(255,190,70,.75), transparent 26%),
+        radial-gradient(circle at 80% 85%, rgba(255,90,190,.65), transparent 28%),
+        linear-gradient(135deg, #5b4bff, #b64cff 48%, #ff5ca8 72%, #ff9f43);
+      background-size: 140% 140%;
+      animation: drift 12s ease-in-out infinite alternate;
+      overflow-x: hidden;
+    }
+    main {
+      width: min(92vw, 760px);
+      padding: 28px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 30px;
+      background: rgba(255,255,255,.13);
+      box-shadow: 0 24px 70px rgba(34,20,80,.28);
+      backdrop-filter: blur(14px);
+    }
+    h1 {
+      margin: 0 0 22px;
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      text-shadow: 0 6px 22px rgba(0,0,0,.2);
+    }
+    .cat {
+      width: min(100%, 620px);
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 26px;
+      border: 4px solid rgba(255,255,255,.5);
+      box-shadow: 0 20px 55px rgba(0,0,0,.25);
+    }
+    p { margin: 18px 0 0; font-size: 1.05rem; }
+    @keyframes drift {
+      from { background-position: 0% 25%; }
+      to { background-position: 100% 75%; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Test</h1>
+  <main>
+    <h1>ねこのページ 🐱</h1>
+    <img class="cat" src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1200&q=85" alt="かわいい猫">
+    <p>かわいい猫と、ちょっと楽しいカラフルな背景。</p>
+  </main>
 </body>
 </html>
